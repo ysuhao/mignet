@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use or mention this software, please cite it as below."
+type: software
+title: "mignet"
+abstract: >-
+  mignet is a free, open-source desktop stamp for Windows. Pick up the stamp
+  from the corner of the screen, aim it at a Microsoft Word document and click
+  to insert the seal behind the text at the aimed page position.
+authors:
+  - given-names: Mint
+    family-names: Ryu
+    alias: MINT RYU
+    website: "https://mintryu.com/"
+    email: me@mintryu.com
+version: 1.0.0
+date-released: 2026-10-21
+license: GPL-3.0-only
+url: "https://mignet.mintryu.com/"
+repository-code: "https://github.com/ysuhao/mignet"
+keywords:
+  - stamp
+  - seal
+  - Microsoft Word
+  - Windows
+  - desktop overlay
+  - 印章
+  - 盖章

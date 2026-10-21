@@ -1,13 +1,20 @@
-# mignet · 桌面实体印章
+# mignet · 桌面实体印章｜在 Word 里盖章的 Windows 工具
+
+[![最新版本](https://img.shields.io/github/v/release/ysuhao/mignet?label=%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC)](https://github.com/ysuhao/mignet/releases/latest)
+[![许可](https://img.shields.io/badge/license-GPLv3-blue)](LICENSE)
+[![平台](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078D6)](https://mignet.mintryu.com/)
 
 **把真实盖章的手感带进 Word：拿起、瞄准、落章，一次到位。**
 
-mignet（程序名 `DesktopStamp`）是一个常驻 Windows 桌面的「实体印章」浮层。印章停在屏幕角落；拿起它，在 Word 文档上瞄准，点一下，印章就作为图片衬于文字下方插入文档，落点误差实测 0.26–0.94 mm。
+mignet（程序名 `DesktopStamp`）是一个常驻 Windows 桌面的「实体印章」浮层，免费下载，GPLv3 开源。印章停在屏幕角落；拿起它，在 Microsoft Word 文档上瞄准，点一下，印章就作为图片衬于文字下方插入文档，落点误差实测 0.26–0.94 mm。不用再手动插入图片、改环绕方式、对位置。
 
-![mignet 设计五态](design/design-states-v1.png)
+**English:** mignet is a free, open-source (GPLv3) desktop stamp for Windows. Pick up the stamp from the corner of the screen, aim it at a Microsoft Word document and click: the seal is inserted behind the text at the page position you aimed at (measured error 0.26–0.94 mm). See the [technical reference](#technical-reference-english) below.
+
+![mignet 印章的五种状态：停靠、悬停、拿起、瞄准、落章](design/design-states-v1.png)
 
 - 官网：<https://mignet.mintryu.com/>
 - 下载：[GitHub Releases](https://github.com/ysuhao/mignet/releases/latest) · [夸克网盘](https://pan.quark.cn/s/20b000d22f8a)
+- 介绍文章：[我做了一枚能在 Word 里盖章的桌面印章](https://mintryu.com/blog/mignet-desktop-stamp-for-word)
 - 作者：[MINT RYU](https://mintryu.com/)
 
 ## 功能
@@ -37,6 +44,26 @@ mignet（程序名 `DesktopStamp`）是一个常驻 Windows 桌面的「实体�
 | 旋转 | Alt + 滚轮，或在外圈金属环上滚动 |
 | 放回角落 | 右键 或 Esc |
 | 菜单（切换印章、导入、锁定尺寸、退出） | 停靠时右键 |
+
+## 常见问题
+
+**mignet 盖的章有法律效力吗？**
+没有。mignet 只是把一张印章图片放进文档，不是电子签名，也不做身份认证。内置三枚印章都标有 SAMPLE / 样章。
+
+**支持 WPS、PDF 或 Excel 吗？**
+1.0 只支持桌面版 Microsoft Word（页面视图）。WPS 文字、PDF、Excel 的适配接口已预留，正在规划中。
+
+**免费吗？**
+免费下载，源码以 GPLv3 开源。
+
+**打开时提示「Windows 已保护你的电脑」怎么办？**
+程序没有代码签名。点「更多信息 → 仍要运行」即可；也可以对照 Release 附带的 `SHA256SUMS.txt` 校验压缩包。
+
+**盖错了怎么撤销？**
+每个章在 Word 里是普通对象，按一次 Ctrl + Z 撤销整个章。
+
+**能用自己的印章吗？**
+能。把 PNG / JPG / BMP / TIF 拖到停靠的印章上即可导入；扫描件和照片会自动提取红色印泥。请只导入你有权使用的印章。
 
 ## 从源码构建
 

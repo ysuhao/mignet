@@ -1,0 +1,70 @@
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A2E5530-4B12-4F91-9A56-7C9831B89E11}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DesktopStamp</RootNamespace>
+    <AssemblyName>DesktopStamp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <Prefer32Bit>false</Prefer32Bit>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <LangVersion>latest</LangVersion>
+    <FrameworkPathOverride Condition="!Exists('C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll')">C:\Windows\Microsoft.NET\Framework64\v4.0.30319</FrameworkPathOverride>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\dist-v2\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\dist-v2\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Core\StampState.cs" />
+    <Compile Include="Core\StampConfiguration.cs" />
+    <Compile Include="Core\CoordinateTransformer.cs" />
+    <Compile Include="Core\StampStateMachine.cs" />
+    <Compile Include="Imaging\SealAsset.cs" />
+    <Compile Include="Imaging\SealImageProcessor.cs" />
+    <Compile Include="Imaging\AssetRepository.cs" />
+    <Compile Include="HostAdapters\IStampHostAdapter.cs" />
+    <Compile Include="HostAdapters\AsyncStampHostWorker.cs" />
+    <Compile Include="HostAdapters\StampDiagnosticsLog.cs" />
+    <Compile Include="HostAdapters\WordStampHostAdapter.cs" />
+    <Compile Include="HostAdapters\StubHostAdapters.cs" />
+    <Compile Include="HostAdapters\CompositeStampHostRouter.cs" />
+    <Compile Include="Audio\StampAudioSynthesizer.cs" />
+    <Compile Include="UI\NativeMethods.cs" />
+    <Compile Include="UI\GlobalInputHook.cs" />
+    <Compile Include="UI\StampRenderer.cs" />
+    <Compile Include="UI\FrostedContextMenuForm.cs" />
+    <Compile Include="UI\StampOverlayForm.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,35 @@
+# Build outputs and intermediate files
+[Bb]in/
+[Oo]bj/
+/dist/
+/dist-v2/
+**/dist/
+**/bench/
+*.pdb
+*.exe
+*.dll
+*.cache
+
+# Packaged copies (rebuild from source)
+*.zip
+/visual-pack-v1/
+
+# Local sessions and editor state
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.log
+/handoff/agy-*.json
+Thumbs.db
+.DS_Store
+
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+test-results.txt
